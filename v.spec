@@ -7,7 +7,7 @@ License:	GPL
 Group:		Libraries
 Group(fr):	Librairies
 Group(pl):	Biblioteki
-Source0:	ftp://ftp.objectcentral.com/%{name}-%{%{name}ersion}.tar.gz
+Source0:	ftp://ftp.objectcentral.com/%{name}-%{version}.tar.gz
 Source1:	ftp://ftp.objectcentral.com/%{name}ref.pdf
 Patch0:		v-config.fix
 #BuildRequires:	Athena-devel
