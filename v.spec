@@ -2,7 +2,7 @@ Summary:	V C++ GUI Framework
 Summary(pl):	V biblioteka do tworzenia GUI dla C++
 Name:		v
 Version:	1.24a
-Release:	1
+Release:	2
 License:	GPL
 Group:		Libraries
 Group(fr):	Librairies
@@ -12,7 +12,7 @@ Source1:	ftp://ftp.objectcentral.com/%{name}ref.pdf
 Patch0:		v-config.fix
 #BuildRequires:	Athena-devel
 BuildRequires:	XFree86-devel >= 3.3.5
-BuildRequires:	lesstif-devel >= 0.88
+BuildRequires:	motif-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define	_prefix	/usr/X11R6
