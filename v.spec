@@ -76,7 +76,3 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644, root, root, 755)
 %doc
 %attr(644,root,root) %{_includedir}/v/*
-
-%changelog
-* Thu Oct  7 1999 Wojciech "Sas" Ciêciwa <cieciwa@alpha.zarz.agh.edu.pl>
--build RPM.
