@@ -1,3 +1,7 @@
+# TODO:
+# - fix build with current gcc
+# - opt patch (RPM_OPT_FLAGS is not used)
+# - review %files (*.so*)
 Summary:	V C++ GUI Framework
 Summary(pl):	V - biblioteka do tworzenia GUI dla C++
 Name:		v
@@ -13,7 +17,6 @@ Patch0:		%{name}-config.fix
 BuildRequires:	XFree86-devel >= 3.3.5
 BuildRequires:	motif-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
 
 %description
 V is a free, multiple platform C++ graphical user interface framework
@@ -66,20 +69,24 @@ Narzêdzia dla biblioteki V.
 
 %prep
 %setup -q -n %{name}
-
 %patch -p0
+
 %build
 # Make with Motif/Lesstif
 cp -f Configs/ConfigM.mk Config.mk
 
 # set HOMEV to %{_prefix}
 # and ARCH to %{_ARCH} ?????
-%{__make} HOMEV=`pwd` Arch=linuxelf RPM_OPT_FLAGS="%{rpmcflags}" all
+%{__make} all \
+	HOMEV=`pwd` \
+	Arch=linuxelf \
+	RPM_OPT_FLAGS="%{rpmcflags}"
 
 # run make again to create static libraries
-%{__make} RPM_OPT_FLAGS="%{rpmcflags}"
+%{__make} \
+	RPM_OPT_FLAGS="%{rpmcflags}"
 
-install %{SOURCE1} $RPM_BUILD_DIR/%{name}/
+install %{SOURCE1} .
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -103,21 +110,21 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libV*.so*
 %attr(755,root,root) %{_bindir}/proto
 %attr(755,root,root) %{_bindir}/tutapp
 %attr(755,root,root) %{_bindir}/icondemo
 %attr(755,root,root) %{_bindir}/vdrawex
 %attr(755,root,root) %{_bindir}/vtestlib
+%attr(755,root,root) %{_libdir}/libV*.so*
 
 %files devel
 %defattr(644,root,root,755)
 %doc vref.pdf
-%attr(644,root,root) %{_includedir}/v/*
+%{_includedir}/v
 
 %files static
 %defattr(644,root,root,755)
-%attr(644,root,root) %{_libdir}/libV*.a
+%{_libdir}/libV*.a
 
 %files utils
 %defattr(644,root,root,755)
