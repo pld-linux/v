@@ -1,0 +1,11 @@
+--- includex/v/vbglcnv.h.org	Wed Jun 23 23:49:42 1999
++++ includex/v/vbglcnv.h	Fri Oct  8 10:33:06 1999
+@@ -24,7 +24,7 @@
+ 
+     void CgraphicsInit(Widget w, XtPointer clientData, XtPointer call);
+ 
+-#include <X11/GLw/GLwDrawA.h>	// Xt OpenGL drawing area widget.
++#include <GL/GLwDrawA.h>	// Xt OpenGL drawing area widget.
+ #include <GL/gl.h>
+ #include <GL/glu.h>
+ #include <GL/glx.h>
