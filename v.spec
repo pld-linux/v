@@ -12,7 +12,7 @@ Patch:		v-config.fix
 #BuildRequires:	Athena-devel
 BuildRequires:	XFree86-devel >= 3.3.5
 BuildRequires:	lesstif-devel >= 0.88
-Buildroot: /tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define	_prefix	/usr/X11R6
 
