@@ -3,12 +3,13 @@ Summary(pl):	V biblioteka do tworzenia GUI dla C++
 Name:		v
 Version:	1.24a
 Release:	1
-Copyright:	GPL
+License:	GPL
 Group:		Libraries
+Group(fr):	Librairies
 Group(pl):	Biblioteki
-Source0:	ftp://ftp.objectcentral.com/%{name}-%{version}.tar.gz
-Source1:	ftp://ftp.objectcentral.com/vref.pdf
-Patch:		v-config.fix
+Source0:	ftp://ftp.objectcentral.com/%{name}-%{%{name}ersion}.tar.gz
+Source1:	ftp://ftp.objectcentral.com/%{name}ref.pdf
+Patch0:		v-config.fix
 #BuildRequires:	Athena-devel
 BuildRequires:	XFree86-devel >= 3.3.5
 BuildRequires:	lesstif-devel >= 0.88
@@ -17,21 +18,22 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define	_prefix	/usr/X11R6
 
 %description
-V is a free, multiple platform C++ graphical user interface framework designed
-to make it the easiest way to write C++ GUI applications available -- 
-commercial, shareware, or freeware.
-V is available for X Athena, X Motif/Lesstif, all Windows platforms, and now including OS/2. 
+V is a free, multiple platform C++ graphical user interface framework
+designed to make it the easiest way to write C++ GUI applications
+available -- commercial, shareware, or freeware. V is available for X
+Athena, X Motif/Lesstif, all Windows platforms, and now including
+OS/2.
 
 %description -l pl
-V jest wieloplatformow± bibliotek± dla C++ do tworzenia GUI.
-Jest dostêpna dla ¶rodowiska X-Window wraz z Ahtena Widgets, Motif/Lesstif.
+V jest wieloplatformow± bibliotek± dla C++ do tworzenia GUI. Jest
+dostêpna dla ¶rodowiska X-Window wraz z Ahtena Widgets, Motif/Lesstif.
 Wszystkich platform Windowsowych, a teraz tak¿e dla OS/2.
 
-%package	devel
+%package devel
 Summary:	V Development
 Summary(pl):	V Development
-Group:		Libraries/Development
-Group(pl):	Biblioteki/Programowanie
+Group:		Development/Libraries
+Requires:	%{name} = %{version}
 
 %description devel
 Development for V library.
@@ -39,24 +41,24 @@ Development for V library.
 %description -l pl devel
 Pliki nag³ówkowe dla biblioteki V.
 
-%package	static
-Summary:	V static library.
-Summary(pl):	V static library.
-Group:		Libraries/Development
-Group(pl):	Biblioteki/Programowanie
+%package static
+Summary:	V static library
+Summary(pl):	V static library
+Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}
 
 %description static
+
 %description -l pl static
 
 %package utils
 Summary:	V library utilities
-Summary(pl):	Narzêdzia dla biblioteki V.
-Group:		Libraries/Development
-Group(pl):	Biblioteki/Programowanie
+Summary(pl):	Narzêdzia dla biblioteki V
+Group:		Development/Libraries
 Requires:	%{name} = %{version}
 
 %description utils
+
 %description -l pl utils
 
 %prep
@@ -97,7 +99,7 @@ rm -rf $RPM_BUILD_ROOT
 %postun -p /sbin/ldconfig
 
 %files
-%defattr(644, root, root, 755)
+%defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libV*.so*
 %attr(755,root,root) %{_bindir}/proto
 %attr(755,root,root) %{_bindir}/tutapp
@@ -106,7 +108,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/vtestlib
 
 %files devel
-%defattr(644, root, root, 755)
+%defattr(644,root,root,755)
 %doc vref.pdf
 %attr(644,root,root) %{_includedir}/v/*
 
@@ -116,9 +118,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files utils
 %defattr(644,root,root,755)
-%attr(644,root,root) %{_bindir}/vgen
-%attr(644,root,root) %{_bindir}/viconed
-%attr(644,root,root) %{_bindir}/vdraw
-%attr(644,root,root) %{_bindir}/b2v
-%attr(644,root,root) %{_bindir}/vide
+%attr(755,root,root) %{_bindir}/vgen
+%attr(755,root,root) %{_bindir}/viconed
+%attr(755,root,root) %{_bindir}/vdraw
+%attr(755,root,root) %{_bindir}/b2v
+%attr(755,root,root) %{_bindir}/vide
 	
