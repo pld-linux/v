@@ -69,7 +69,7 @@ Narzêdzia dla biblioteki V.
 
 %patch -p0
 %build
-# Make with Motif/Lesstif 
+# Make with Motif/Lesstif
 cp -f Configs/ConfigM.mk Config.mk
 
 # set HOMEV to %{_prefix}
@@ -78,7 +78,7 @@ cp -f Configs/ConfigM.mk Config.mk
 
 # run make again to create static libraries
 %{__make} RPM_OPT_FLAGS="%{rpmcflags}"
- 
+
 install %{SOURCE1} $RPM_BUILD_DIR/%{name}/
 
 %install
@@ -126,4 +126,3 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/vdraw
 %attr(755,root,root) %{_bindir}/b2v
 %attr(755,root,root) %{_bindir}/vide
-	
