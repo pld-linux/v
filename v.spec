@@ -69,7 +69,12 @@ cp Configs/ConfigM.mk Config.mk
 
 # set HOMEV to %{_prefix}
 # and ARCH to %{_ARCH} ?????
-make HOMEV=`pwd` Arch=linuxelf RPM_OPT_FLAGS="$RPM_OPT_FLAGS" 
+make HOMEV=`pwd` Arch=linuxelf RPM_OPT_FLAGS="$RPM_OPT_FLAGS" all
+
+# run make again to create static libraries
+make RPM_OPT_FLAGS="$RPM_OPT_FLAGS"
+ 
+install %{SOURCE1} $RPM_BUILD_DIR/%{name}/
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -82,7 +87,7 @@ install lib/*.a $RPM_BUILD_ROOT%{_libdir}
 
 install includex/v/*  $RPM_BUILD_ROOT%{_includedir}/v
 
-#rm bin/ThisIs
+rm bin/ThisIs
 install -s bin/* $RPM_BUILD_ROOT%{_bindir}
 
 %clean
@@ -93,7 +98,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644, root, root, 755)
-%doc
 %attr(755,root,root) %{_libdir}/libV*.so*
 %attr(755,root,root) %{_bindir}/proto
 %attr(755,root,root) %{_bindir}/tutapp
@@ -103,7 +107,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644, root, root, 755)
-%doc
+%doc vref.pdf
 %attr(644,root,root) %{_includedir}/v/*
 
 %files static
