@@ -12,8 +12,8 @@ Group(pl):	Biblioteki
 Group(pt_BR):	Bibliotecas
 Group(ru):	Библиотеки
 Group(uk):	Б╕бл╕отеки
-Source0:	ftp://ftp.objectcentral.com/%{name}-%{%{name}ersion}.tar.gz
-Source1:	ftp://ftp.objectcentral.com/%{name}ref.pdf
+Source0:	ftp://ftp.objectcentral.com/%{name}-%{version}.tar.gz
+Source1:	ftp://ftp.objectcentral.com/vref.pdf
 Patch0:		%{name}-config.fix
 BuildRequires:	XFree86-devel >= 3.3.5
 BuildRequires:	motif-devel
