@@ -1,5 +1,5 @@
 Summary:	V C++ GUI Framework
-Summary(pl):	V biblioteka do tworzenia GUI dla C++
+Summary(pl):	V - biblioteka do tworzenia GUI dla C++
 Name:		v
 Version:	1.24a
 Release:	2
@@ -9,10 +9,12 @@ Group(de):	Libraries
 Group(es):	Bibliotecas
 Group(fr):	Librairies
 Group(pl):	Biblioteki
-Source0:	ftp://ftp.objectcentral.com/%{name}-%{version}.tar.gz
-Source1:	ftp://ftp.objectcentral.com/vref.pdf
+Group(pt_BR):	Bibliotecas
+Group(ru):	Библиотеки
+Group(uk):	Б╕бл╕отеки
+Source0:	ftp://ftp.objectcentral.com/%{name}-%{%{name}ersion}.tar.gz
+Source1:	ftp://ftp.objectcentral.com/%{name}ref.pdf
 Patch0:		%{name}-config.fix
-#BuildRequires:	Athena-devel
 BuildRequires:	XFree86-devel >= 3.3.5
 BuildRequires:	motif-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -28,22 +30,27 @@ OS/2.
 
 %description -l pl
 V jest wieloplatformow╠ bibliotek╠ dla C++ do tworzenia GUI. Jest
-dostЙpna dla ╤rodowiska X-Window wraz z Ahtena Widgets, Motif/Lesstif.
-Wszystkich platform Windowsowych, a teraz tak©e dla OS/2.
+dostЙpna dla ╤rodowiska X-Window wraz z Ahtena Widgets,
+Motifem/Lesstifem, wszystkich platform Windowsowych, a teraz tak©e dla
+OS/2.
 
 %package devel
 Summary:	V Development
-Summary(pl):	V Development
+Summary(pl):	Dla programistСw V
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
+Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
+Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(ru):	Разработка/Библиотеки
+Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name} = %{version}
 
 %description devel
 Development for V library.
 
-%description -l pl devel
+%description devel -l pl
 Pliki nagЁСwkowe dla biblioteki V.
 
 %package static
@@ -51,26 +58,38 @@ Summary:	V static library
 Summary(pl):	Biblioteka statyczna V
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
+Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
+Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(ru):	Разработка/Библиотеки
+Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name}-devel = %{version}
 
 %description static
+V static library.
 
-%description -l pl static
+%description static -l pl
+Biblioteka statyczna V.
 
 %package utils
 Summary:	V library utilities
 Summary(pl):	NarzЙdzia dla biblioteki V
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
+Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
+Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(ru):	Разработка/Библиотеки
+Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name} = %{version}
 
 %description utils
+V library utilities.
 
-%description -l pl utils
+%description utils -l pl
+NarzЙdzia dla biblioteki V.
 
 %prep
 %setup -q -n %{name}
@@ -78,7 +97,7 @@ Requires:	%{name} = %{version}
 %patch -p0
 %build
 # Make with Motif/Lesstif 
-cp Configs/ConfigM.mk Config.mk
+cp -f Configs/ConfigM.mk Config.mk
 
 # set HOMEV to %{_prefix}
 # and ARCH to %{_ARCH} ?????
@@ -100,7 +119,7 @@ install lib/*.a $RPM_BUILD_ROOT%{_libdir}
 
 install includex/v/*  $RPM_BUILD_ROOT%{_includedir}/v
 
-rm bin/ThisIs
+rm -f bin/ThisIs
 install bin/* $RPM_BUILD_ROOT%{_bindir}
 
 %clean
