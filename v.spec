@@ -5,17 +5,19 @@ Version:	1.24a
 Release:	2
 License:	GPL
 Group:		Libraries
+Group(de):	Libraries
+Group(es):	Bibliotecas
 Group(fr):	Librairies
 Group(pl):	Biblioteki
-Source0:	ftp://ftp.objectcentral.com/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.objectcentral.com/%{name}-%{%{name}ersion}.tar.gz
 Source1:	ftp://ftp.objectcentral.com/%{name}ref.pdf
-Patch0:		v-config.fix
+Patch0:		%{name}-config.fix
 #BuildRequires:	Athena-devel
 BuildRequires:	XFree86-devel >= 3.3.5
 BuildRequires:	motif-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define	_prefix	/usr/X11R6
+%define		_prefix		/usr/X11R6
 
 %description
 V is a free, multiple platform C++ graphical user interface framework
@@ -33,6 +35,9 @@ Wszystkich platform Windowsowych, a teraz tak¿e dla OS/2.
 Summary:	V Development
 Summary(pl):	V Development
 Group:		Development/Libraries
+Group(de):	Entwicklung/Libraries
+Group(fr):	Development/Librairies
+Group(pl):	Programowanie/Biblioteki
 Requires:	%{name} = %{version}
 
 %description devel
@@ -43,8 +48,11 @@ Pliki nag³ówkowe dla biblioteki V.
 
 %package static
 Summary:	V static library
-Summary(pl):	V static library
+Summary(pl):	Biblioteka statyczna V
 Group:		Development/Libraries
+Group(de):	Entwicklung/Libraries
+Group(fr):	Development/Librairies
+Group(pl):	Programowanie/Biblioteki
 Requires:	%{name}-devel = %{version}
 
 %description static
@@ -55,6 +63,9 @@ Requires:	%{name}-devel = %{version}
 Summary:	V library utilities
 Summary(pl):	Narzêdzia dla biblioteki V
 Group:		Development/Libraries
+Group(de):	Entwicklung/Libraries
+Group(fr):	Development/Librairies
+Group(pl):	Programowanie/Biblioteki
 Requires:	%{name} = %{version}
 
 %description utils
@@ -71,10 +82,10 @@ cp Configs/ConfigM.mk Config.mk
 
 # set HOMEV to %{_prefix}
 # and ARCH to %{_ARCH} ?????
-%{__make} HOMEV=`pwd` Arch=linuxelf RPM_OPT_FLAGS="$RPM_OPT_FLAGS" all
+%{__make} HOMEV=`pwd` Arch=linuxelf RPM_OPT_FLAGS="%{rpmcflags}" all
 
 # run make again to create static libraries
-%{__make} RPM_OPT_FLAGS="$RPM_OPT_FLAGS"
+%{__make} RPM_OPT_FLAGS="%{rpmcflags}"
  
 install %{SOURCE1} $RPM_BUILD_DIR/%{name}/
 
@@ -90,13 +101,13 @@ install lib/*.a $RPM_BUILD_ROOT%{_libdir}
 install includex/v/*  $RPM_BUILD_ROOT%{_includedir}/v
 
 rm bin/ThisIs
-install -s bin/* $RPM_BUILD_ROOT%{_bindir}
+install bin/* $RPM_BUILD_ROOT%{_bindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
