@@ -71,10 +71,10 @@ cp Configs/ConfigM.mk Config.mk
 
 # set HOMEV to %{_prefix}
 # and ARCH to %{_ARCH} ?????
-make HOMEV=`pwd` Arch=linuxelf RPM_OPT_FLAGS="$RPM_OPT_FLAGS" all
+%{__make} HOMEV=`pwd` Arch=linuxelf RPM_OPT_FLAGS="$RPM_OPT_FLAGS" all
 
 # run make again to create static libraries
-make RPM_OPT_FLAGS="$RPM_OPT_FLAGS"
+%{__make} RPM_OPT_FLAGS="$RPM_OPT_FLAGS"
  
 install %{SOURCE1} $RPM_BUILD_DIR/%{name}/
 
