@@ -12,7 +12,6 @@ BuildRequires:	XFree86-devel >= 3.3.5
 BuildRequires:	motif-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
 
 %description
 V is a free, multiple platform C++ graphical user interface framework
