@@ -6,7 +6,9 @@ Release:	2
 License:	GPL
 Group:		Libraries
 Source0:	ftp://ftp.objectcentral.com/%{name}-%{version}.tar.gz
+# Source0-md5:	6336c1e2e9f7fa734cb021fffbfa0a95
 Source1:	ftp://ftp.objectcentral.com/vref.pdf
+# Source1-md5:	0ed281664d7cb0dedaf054aa890b6189
 Patch0:		%{name}-config.fix
 BuildRequires:	XFree86-devel >= 3.3.5
 BuildRequires:	motif-devel
