@@ -9,8 +9,8 @@ Group(de):	Libraries
 Group(es):	Bibliotecas
 Group(fr):	Librairies
 Group(pl):	Biblioteki
-Source0:	ftp://ftp.objectcentral.com/%{name}-%{%{name}ersion}.tar.gz
-Source1:	ftp://ftp.objectcentral.com/%{name}ref.pdf
+Source0:	ftp://ftp.objectcentral.com/%{name}-%{version}.tar.gz
+Source1:	ftp://ftp.objectcentral.com/vref.pdf
 Patch0:		%{name}-config.fix
 #BuildRequires:	Athena-devel
 BuildRequires:	XFree86-devel >= 3.3.5
