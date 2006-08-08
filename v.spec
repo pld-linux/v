@@ -69,7 +69,7 @@ Narzêdzia dla biblioteki V.
 
 %prep
 %setup -q -n %{name}
-%patch -p0
+%patch0 -p0
 
 %build
 # Make with Motif/Lesstif
