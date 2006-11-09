@@ -11,7 +11,7 @@ License:	GPL
 Group:		Libraries
 Source0:	ftp://ftp.objectcentral.com/%{name}-%{version}.tar.gz
 # Source0-md5:	6336c1e2e9f7fa734cb021fffbfa0a95
-Source1:	ftp://ftp.objectcentral.com/vref.pdf
+Source1:	ftp://ftp.objectcentral.com/%{name}ref.pdf
 # Source1-md5:	0ed281664d7cb0dedaf054aa890b6189
 Patch0:		%{name}-config.fix
 BuildRequires:	XFree86-devel >= 3.3.5
@@ -35,7 +35,7 @@ OS/2.
 Summary:	V Development
 Summary(pl):	Dla programistów V
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Development for V library.
@@ -47,7 +47,7 @@ Pliki nag³ówkowe dla biblioteki V.
 Summary:	V static library
 Summary(pl):	Biblioteka statyczna V
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 V static library.
@@ -59,7 +59,7 @@ Biblioteka statyczna V.
 Summary:	V library utilities
 Summary(pl):	Narzêdzia dla biblioteki V
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description utils
 V library utilities.
