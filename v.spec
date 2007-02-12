@@ -3,7 +3,7 @@
 # - opt patch (RPM_OPT_FLAGS is not used)
 # - review %files (*.so*)
 Summary:	V C++ GUI Framework
-Summary(pl.UTF-8):   V - biblioteka do tworzenia GUI dla C++
+Summary(pl.UTF-8):	V - biblioteka do tworzenia GUI dla C++
 Name:		v
 Version:	1.24a
 Release:	2
@@ -33,7 +33,7 @@ OS/2.
 
 %package devel
 Summary:	V Development
-Summary(pl.UTF-8):   Dla programistów V
+Summary(pl.UTF-8):	Dla programistów V
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -45,7 +45,7 @@ Pliki nagłówkowe dla biblioteki V.
 
 %package static
 Summary:	V static library
-Summary(pl.UTF-8):   Biblioteka statyczna V
+Summary(pl.UTF-8):	Biblioteka statyczna V
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
@@ -57,7 +57,7 @@ Biblioteka statyczna V.
 
 %package utils
 Summary:	V library utilities
-Summary(pl.UTF-8):   Narzędzia dla biblioteki V
+Summary(pl.UTF-8):	Narzędzia dla biblioteki V
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
