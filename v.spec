@@ -3,7 +3,7 @@
 # - opt patch (RPM_OPT_FLAGS is not used)
 # - review %files (*.so*)
 Summary:	V C++ GUI Framework
-Summary(pl):	V - biblioteka do tworzenia GUI dla C++
+Summary(pl.UTF-8):   V - biblioteka do tworzenia GUI dla C++
 Name:		v
 Version:	1.24a
 Release:	2
@@ -25,47 +25,47 @@ available -- commercial, shareware, or freeware. V is available for X
 Athena, X Motif/Lesstif, all Windows platforms, and now including
 OS/2.
 
-%description -l pl
-V jest wieloplatformow± bibliotek± dla C++ do tworzenia GUI. Jest
-dostêpna dla ¶rodowiska X-Window wraz z Ahtena Widgets,
-Motifem/Lesstifem, wszystkich platform Windowsowych, a teraz tak¿e dla
+%description -l pl.UTF-8
+V jest wieloplatformowÄ… bibliotekÄ… dla C++ do tworzenia GUI. Jest
+dostÄ™pna dla Å›rodowiska X-Window wraz z Ahtena Widgets,
+Motifem/Lesstifem, wszystkich platform Windowsowych, a teraz takÅ¼e dla
 OS/2.
 
 %package devel
 Summary:	V Development
-Summary(pl):	Dla programistów V
+Summary(pl.UTF-8):   Dla programistÃ³w V
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Development for V library.
 
-%description devel -l pl
-Pliki nag³ówkowe dla biblioteki V.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe dla biblioteki V.
 
 %package static
 Summary:	V static library
-Summary(pl):	Biblioteka statyczna V
+Summary(pl.UTF-8):   Biblioteka statyczna V
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 V static library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Biblioteka statyczna V.
 
 %package utils
 Summary:	V library utilities
-Summary(pl):	Narzêdzia dla biblioteki V
+Summary(pl.UTF-8):   NarzÄ™dzia dla biblioteki V
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description utils
 V library utilities.
 
-%description utils -l pl
-Narzêdzia dla biblioteki V.
+%description utils -l pl.UTF-8
+NarzÄ™dzia dla biblioteki V.
 
 %prep
 %setup -q -n %{name}
